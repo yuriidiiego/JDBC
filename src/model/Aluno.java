@@ -1,69 +1,66 @@
 package model;
 
 public class Aluno {
+  private int id;
+  private String nome;
+  private int idade;
+  private String estado;
 
-    //atributos
-    private int id;
-    private String nome;
-    private int idade;
-    private String estado;
+  public Aluno(int id, String nome, int idade, String estado) {
+    this.id = id;
+    this.nome = nome;
+    this.idade = idade;
+    this.estado = estado;
+  }
 
-    //construtor 1
-    public Aluno(int id, String nome, int idade, String estado){
-        this.id = id;
-        this.nome = nome;
-        this.idade = idade;
-        this.estado = estado;
-    }
-    //construtor 2
-    public Aluno( String nome, int idade, String estado){
-        this.nome = nome;
-        this.idade = idade;
-        this.estado = estado;
-    }
-    //construtor 3
-    public Aluno(){ }
+  public Aluno(String nome, int idade, String estado) {
+    this.nome = nome;
+    this.idade = idade;
+    this.estado = estado;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public Aluno() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public int getIdade() {
-        return idade;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+  public int getIdade() {
+    return idade;
+  }
 
-    public String getEstado() {
-        return estado;
-    }
+  public void setIdade(int idade) {
+    this.idade = idade;
+  }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
+  public String getEstado() {
+    return estado;
+  }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("model.Aluno{");
-        sb.append("id=").append(id);
-        sb.append(", nome='").append(nome).append('\'');
-        sb.append(", idade=").append(idade);
-        sb.append(", estado='").append(estado).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
+  public void setEstado(String estado) {
+    this.estado = estado;
+  }
+
+  @Override
+  public String toString() {
+    final StringBuilder sb = new StringBuilder("model.Aluno{");
+    sb.append("id=").append(id);
+    sb.append(", nome='").append(nome).append('\'');
+    sb.append(", idade=").append(idade);
+    sb.append(", estado='").append(estado).append('\'');
+    sb.append('}');
+    return sb.toString();
+  }
 }

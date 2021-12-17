@@ -1,16 +1,17 @@
-package DAO;
+package dao;
 
-import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-    //construtor declarado como privado. Evitando assim criar instancias da classe.
+    
     private ConnectionFactory() {
-        throw new UnsupportedOperationException(); //Lançado para indicar que a operação solicitada não é compatível.
+        throw new UnsupportedOperationException();
     }
 
-    //método pra conexão com o Banco de Dados
+    //Método que retorna uma conexão com o banco de dados.
     public static Connection getConnection() {
         String servidor = "jdbc:sqlserver://localhost:1433;databaseName=digital_innovation_one";
         String usuario = "sa";
@@ -20,10 +21,10 @@ public class ConnectionFactory {
 
         try {
             conexao = DriverManager.getConnection(servidor, usuario, senha);
-            System.out.println("Conexão funcionado!!");
+            System.out.println("Conexão com o banco de dados estabelecida com sucesso!");
 
         } catch (SQLException e) {
-            System.out.println("FALHA ao tentar conectar");
+            System.out.println("Erro ao estabelecer conexão com o banco de dados!");
         }
         return conexao;
     }
